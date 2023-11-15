@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+
+/*Selector universal le pongo border box para que el tamaño sea desde el borde de la caja y no del contenido*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: open sans, sans-serif;
+    margin: 0;
+    padding: 40px 0;
+    height: 500px;
+    background-image: url(../img/fondo2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    position: relative;
+}
+.body-portal{
+    background-image:none;
+}
+
+header {
+    padding: 30px 0;
+    margin-left: 8%;
+}
+/*.logo{
+    margin-bottom:200px;
+}*/
+
+.logo img {
+    width: 250px;
+}
+.logo-portal img{
+    width:100px;
+}
+h1 {
+    font-weight: normal;
+    ;
+    margin: 0;
+    color: white;
+}
+/*
+h2{
+    max-width: 960px;
+    color: #fff;
+
+}
+*/
+nav {
+    background: #adb5bd;
+    padding: 15px 0;
+}
+
+nav a {
+    display: inline-block;
+    height: 40px;
+    background: #fff;
+    line-height: 40px;
+    padding: 0 15px;
+    text-decoration: none;
+    border-radius: 20px;
+    color: black;
+}
+
+nav a:hover {
+    background: #ddd;
+}
+
+.nav-principal {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.nav-esc {
+    margin-left: 10px;
+}
+
+.nav-portal {
+    text-align: right;
+    padding-right: 50px;
+}
+
+/*Secciones*/
+.servicios {
+    padding: 40px 0;
+}
+
+.col-equipo img {
+    width: 100%
+}
+
+.col-equipo {
+    text-align: justify;
+    position: relative;
+}
+
+.contenedor {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 30px;
+    
+}
+
+/*Con margin centro los valores, con max-width lo que hago es mantener el diseño en cada dispositivo con ese valor*/
+.clientes {
+    padding: 40px 0;
+}
+
+.equipo {
+    background: #adb5bd;
+    padding: 40px 0;
+}
+
+.contacto {
+    padding: 40px 0;
+    height: 300px;
+}
+
+.contacto a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.redes {
+    padding: 30px 0;
+    margin-left: 10%;
+}
+
+.redes img {
+    width: 30px;
+}
+
+
+footer {
+    background: #adb5bd;
+   /* padding: 50px 0;*/
+    text-align: center;
+}
+
+/* Reglas media queries: Reglas css que se van a aplicar cuando el dispositivo tiene determinada resolución*/
+/*Se aplica a partir de que el dispositivo tenga 700px de ancho*/
+@media screen and (min-width:700px) {
+    .fila-equipo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: first baseline;
+    }
+
+    .col-equipo {
+        width: 48%;
+        padding-bottom: 30px;
+    }
+
+
+}
+
+@media screen and (min-width:960px) {
+    .col-equipo {
+        width: 23%;
+    }
+
+    .redes {
+        position: fixed;
+        padding: 4px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        z-index: 5;
+    }
+
+
+}
+
+@media screen and (max-width:550px) {
+    .nav-esc {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-esc a {
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width:960px) {
+    .nav-portal {
+        padding: 0
+    }
+}
