@@ -20,8 +20,8 @@
     <body>
         <header>
             <div class="logo">
-                <img alt="logo de la empresa Acuña" src="../img/logo4.png" />
-                <h1>Estudio Jurídico</h1>
+                <img alt="logo de la empresa" src="../img/logo4.png" />
+                <h1>Estudio Jur�dico</h1>
             </div>
         </header>
         <nav>
@@ -29,34 +29,28 @@
                 <div class="row">
                     <div class="col-sm-8 text-left mb-1">
                         <a class="btn btn-secondary"
-                            href="../index.html#servicios"
+                            href="../index.jsp#servicios"
                             role="button">
                             Servicios
                         </a>
                         <a class="btn btn-secondary"
-                            href="../index.html#equipo"
+                            href="../index.jsp#equipo"
                             role="button">
                             Equipo
                         </a>
                         <a class="btn btn-secondary"
-                            href="../paginas/contacto.html#contacto"
+                            href="../paginas/contacto.jsp#contacto"
                             role="button">
                             Contacto
                         </a>
                     </div>
-
-                    
                     
                     <div class="col-sm-4 text-right mb-1">
-                        <a class="btn btn-secondary" href="#" role="button"
-                        onclick="alert('Login');"><i class="bi bi-person-square">  Login</i></a>
-                        <!-- <a class="btn btn-secondary" href="jus.html"
-                            role="button">
-                            Valor Jus actual
-                        </a>  -->
+                        <a class="btn btn-secondary" href="../paginas/login.jsp" role="button"
+                        ><i class="bi bi-person-square">  Login</i></a>                       
                     </div>
-                  
-                </div>
+                 
+                </div>	
             </div>
         </nav>
         <main class="container d-flex flex-sm-column flex-md-row">
@@ -135,7 +129,7 @@
                                         required
                                         rows="3"
                                         style="resize: none;"></textarea>
-                                    <p>Máximo de 255 caracteres
+                                    <p>M�ximo de 255 caracteres
                                         (<span class="text-danger"
                                             id="resultado">0</span>)
                                     </p>
@@ -160,7 +154,7 @@
 
             <!-- redes-->
             <aside class="col-md-1 col-sm-12 d-flex flex-md-column flex-sm-row justify-content-center">
-                ´
+                
                 <a class="link-dark text-center"
                     href="https://www.facebook.com"
                     target="_blank">
@@ -207,9 +201,9 @@
                     </a>
 
                     <span class="fst-italic text-dark">
-                        Grupo: María Luján Acuña, Griselda Molina, Sandra Caseres Cano, 
+                        Grupo: Mar�a Luj�n Acu�a, Griselda Molina, Sandra Caseres Cano, 
                                 Florencia Mammana, Cristian Aparicio
-                         - Comisión #23564
+                         - Comisi�n #23564
                     </span>
 
                 </div>
