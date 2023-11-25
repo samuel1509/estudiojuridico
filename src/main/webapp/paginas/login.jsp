@@ -9,12 +9,15 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	rel="stylesheet" />
+
 <!-- iconos bootstrap-->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
 	rel="stylesheet" />
+
 <!--estilos propios-->
 <link href="../css/style.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -56,19 +59,29 @@
 						<h1 class="card-title">LOGIN USUARIOS</h1>
 					</div>
 					<div class="card-body bg-dark-subtle">
-						<form class="row g-3" id="formContacto">
+						<%
+						String mensaje = (String) session.getAttribute("mensaje");
+
+						if (mensaje != null) {
+							out.println("<div class='bg-danger text-warning text-center p-1 rounded'>");
+							out.println(mensaje);
+							out.println("</div>");
+						}
+						%>
+						<form class="row g-3" id="formContacto"
+							action="../controlador/loginController.jsp" method="post">
 							<div class="col-md-6">
-								<label class="form-label" for="inputUsuario"> Usuario <span
+								<label class="form-label" for="usuario"> Usuario <span
 									class="text-danger">*</span>
-								</label> <input autofocus class="form-control" id="inputUsuario"
+								</label> <input autofocus class="form-control" id="usuario" name="usuario"
 									placeholder="Ingresa tu nombre de usuario" required type="text" />
 							</div>
 
 							<div class="col-md-6">
-								<label class="form-label" for="inputApellido"> Password
-									<span class="text-danger">*</span>
-								</label> <input class="form-control" id="inputPassword"
-									placeholder="Ingresa tu password" required type="password" />
+								<label class="form-label" for="clave"> Clave <span
+									class="text-danger">*</span>
+								</label> <input class="form-control" id="clave" name="clave"
+									placeholder="Ingresa tu clave" required type="clave" />
 							</div>
 
 							<div class="col-12">
@@ -78,6 +91,7 @@
 									role="button"> Cancelar </a>
 							</div>
 						</form>
+
 					</div>
 				</div>
 			</article>
@@ -86,20 +100,19 @@
 
 		<!--redes-->
 
-		<aside class="col-md-1 d-flex flex-md-column 
+		<aside
+			class="col-md-1 d-flex flex-md-column 
 					flex-sm-row justify-content-center">
 
 			<a class="link-dark text-center" href="https://www.facebook.com"
 				target="_blank"> <i
 				class="bi bi-facebook fs-3 mx-1 bg-dark-subtle rounded-circle">
 			</i>
-			</a>
-			<a class="link-dark text-center" href="https://www.instagram.com"
+			</a> <a class="link-dark text-center" href="https://www.instagram.com"
 				target="_blank"> <i
 				class="bi bi-instagram fs-3 mx-1 bg-dark-subtle rounded-circle">
 			</i>
-			</a> 
-			<a class="link-dark text-center" href="https://www.whatsapp.com"
+			</a> <a class="link-dark text-center" href="https://www.whatsapp.com"
 				target="_blank"> <i
 				class="bi bi-whatsapp fs-3 mx-1 bg-dark-subtle rounded-circle">
 			</i>
@@ -128,6 +141,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
 		
 	</script>
-	
+
 </body>
 </html>
