@@ -1,16 +1,14 @@
-package clientes;
+package modelo;
 
 //clase modelo con los atributos de la tabla clientes
 
 public class Cliente {
 
-	private int id;
+	private Long id;
 	private String nombre;
 	private String apellido;
-	private long cuit;
-	private long dni;
-	private String nombreUsuario;
-	private String password;
+	private Long cuit;
+	private Long dni;
 	private String email;
 	private String domicilio;
 	
@@ -21,10 +19,8 @@ public class Cliente {
 	public Cliente(
 			String nombre,
 			String apellido,
-			long cuit,
-			long dni,
-			String nombreUsuario,
-			String password,
+			Long cuit,
+			Long dni,
 			String email,
 			String domicilio
 			){
@@ -35,12 +31,27 @@ public class Cliente {
 		this.dni=dni;
 		this.email=email;
 		this.domicilio=domicilio;
-		this.nombreUsuario=nombreUsuario ;
-		this.password=password;
-		this.email=email;
 	}
 	
-	public int getId() {
+	public Cliente(
+			Long id,
+			String nombre,
+			String apellido,
+			Long cuit,
+			Long dni,
+			String email,
+			String domicilio
+			){
+		this.id=id;
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.cuit=cuit;
+		this.dni=dni;
+		this.email=email;
+		this.domicilio=domicilio;
+	}
+	
+	public Long getId() {
 		return id;
 	}
 
@@ -65,43 +76,23 @@ public class Cliente {
 	}
 
 
-	public long getCuit() {
+	public Long getCuit() {
 		return cuit;
 	}
 
 
-	public void setCuit(long cuit) {
+	public void setCuit(Long cuit) {
 		this.cuit = cuit;
 	}
 
 
-	public long getDni() {
+	public Long getDni() {
 		return dni;
 	}
 
 
-	public void setDni(long dni) {
+	public void setDni(Long dni) {
 		this.dni = dni;
-	}
-
-
-	public String getNombreUsuario() {
-		return nombreUsuario;
-	}
-
-
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 
@@ -110,7 +101,7 @@ public class Cliente {
 	}
 
 
-	public void setEmail(String email) {
+	public void setemail(String email) {
 		this.email = email;
 	}
 
@@ -123,6 +114,11 @@ public class Cliente {
 	public void setDomicilio(String domicilio) {
 		this.domicilio = domicilio;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cuit=" + cuit + ", dni=" + dni
+				+ ", email=" + email + ", domicilio=" + domicilio + "]";
+	}
+	
 }
