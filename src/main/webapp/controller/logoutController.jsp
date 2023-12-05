@@ -2,7 +2,7 @@
 <%@page 
 import="java.sql.ResultSet"
 import="java.sql.Statement"
-import="baseDeDatos.ConexionMySQL"
+import="db.ConexionMySQL"
 %>
 
 <%

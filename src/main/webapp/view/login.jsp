@@ -34,18 +34,9 @@
 					<a class="btn btn-secondary" href="../index.jsp#servicios"
 						role="button"> Servicios </a> <a class="btn btn-secondary"
 						href="../index.jsp#equipo" role="button"> Equipo </a> <a
-						class="btn btn-secondary" href="../paginas/contacto.jsp#contacto"
+						class="btn btn-secondary" href="../view/contacto.jsp#contacto"
 						role="button"> Contacto </a>
 				</div>
-
-
-				<!-- 
-                    <div class="col-sm-4 text-right mb-1">
-                        <a class="btn btn-secondary" href="#" role="button"
-                        onclick="alert('Login');"><i class="bi bi-person-square">  Login</i></a>
-                        
-                    </div>
-                   -->
 			</div>
 		</div>
 	</nav>
@@ -69,12 +60,13 @@
 						}
 						%>
 						<form class="row g-3" id="formContacto"
-							action="../controlador/loginController.jsp" method="post">
+							action="../controller/loginController.jsp" method="post">
 							<div class="col-md-6">
 								<label class="form-label" for="usuario"> Usuario <span
 									class="text-danger">*</span>
-								</label> <input autofocus class="form-control" id="usuario" name="usuario"
-									placeholder="Ingresa tu nombre de usuario" required type="text" />
+								</label> <input autofocus class="form-control" id="usuario"
+									name="usuario" placeholder="Ingresa tu nombre de usuario"
+									required type="text" />
 							</div>
 
 							<div class="col-md-6">

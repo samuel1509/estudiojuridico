@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 <meta charset="UTF-8" />
@@ -36,16 +36,18 @@
 				<div class="col-sm-8 text-left mb-1">
 					<a class="btn btn-secondary" href="#servicios" role="button">Servicios</a>
 					<a class="btn btn-secondary" href="#equipo" role="button">Equipo</a>
-					<a class="btn btn-secondary" href="paginas/contacto.jsp#contacto"
+					<a class="btn btn-secondary" href="view/contacto.jsp#contacto"
 						role="button">Contacto</a>
 				</div>
 				<div class="col-sm-4 text-right mb-1">
-					<a class="btn btn-secondary" href="paginas/login.jsp" role="button">
-						<i class="bi bi-person-square"> Login</i>
+					<a class="btn btn-secondary" href="view/login.jsp" role="button">
+						<i class="bi bi-door-open-fill">Acceder</i>
+						
 					</a>
 				</div>
 			</div>
 		</div>
+		
 		<%
 		String mensaje = (String) request.getSession().getAttribute("mensaje");
 
