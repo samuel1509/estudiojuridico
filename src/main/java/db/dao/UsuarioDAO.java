@@ -21,6 +21,7 @@ public class UsuarioDAO {
 	
 	public Usuario validar(String nombre,String clave) {
 		Usuario usr=null;
+		
 		sql = "SELECT u.id, nombre, clave, roles_id, rol " + 
 					"FROM usuarios As u JOIN roles AS r ON roles_id=r.id "+
 					"WHERE nombre='" + nombre + "' and clave='" + clave + "';";
@@ -28,7 +29,9 @@ public class UsuarioDAO {
 		try {
 			
 			rs = st.executeQuery(sql);
+			
 			if(rs.next()) {
+				
 			usr=new Usuario();
 			
 			usr.setId(rs.getInt("id"));

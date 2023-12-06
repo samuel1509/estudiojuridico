@@ -22,12 +22,14 @@ UsuarioDAO usrDAO = new UsuarioDAO();
 Usuario usr = usrDAO.validar(nombreUsr, claveUsr);
 
 request.getSession(false).removeAttribute("mensaje");
+
 if (usr != null) {
 	//guardo datos usuario usuario logueado
 	request.getSession().setAttribute("usuario", usr);
 	
 	//aun no sale el pase de foto de usuario
 	request.getSession().setAttribute("userImg", "https://imgdb.net/11009");
+	
 	//pasa a backend admin
 	if (usr.getNombreRol().equals("admin")) {
 		response.sendRedirect("/estudiojuridico/view/gestionEstudio.jsp");

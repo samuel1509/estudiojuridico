@@ -54,6 +54,7 @@
             </div>
         </nav>
         <main class="container d-flex flex-sm-column flex-md-row">
+           
             <!-- formulario contacto-->
             <section class="row" id="contacto">
                 <article class="col-12">

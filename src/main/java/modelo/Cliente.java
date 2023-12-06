@@ -12,9 +12,11 @@ public class Cliente {
 	private String email;
 	private String domicilio;
 	
+	//constructor
 	public Cliente() {
-		
+			
 	};
+	
 	
 	public Cliente(
 			String nombre,
@@ -24,7 +26,6 @@ public class Cliente {
 			String email,
 			String domicilio
 			){
-		
 		this.nombre=nombre;
 		this.apellido=apellido;
 		this.cuit=cuit;
@@ -41,7 +42,8 @@ public class Cliente {
 			Long dni,
 			String email,
 			String domicilio
-			){
+			)
+	{
 		this.id=id;
 		this.nombre=nombre;
 		this.apellido=apellido;
@@ -51,16 +53,23 @@ public class Cliente {
 		this.domicilio=domicilio;
 	}
 	
+	
+	
+	
+	//gets y setters
 	public Long getId() {
 		return id;
 	}
 
+	
+	
 
 	public String getNombre() {
 		return nombre;
 	}
 
 
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}

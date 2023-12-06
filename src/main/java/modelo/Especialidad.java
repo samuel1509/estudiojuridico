@@ -1,7 +1,7 @@
 package modelo;
 
 //ESPECIALIDADES DE LOS ABOGADOS
-public enum Especialidad {
+public enum Especialidad{
 	DERECHO_DE_FAMILIA("Derecho de Familia",1),
 	DERECHO_PENAL("Derecho Penal",2),
 	DERECHO_LABORAL("Derecho Laboral",3),

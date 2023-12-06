@@ -2,12 +2,12 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="db.ConexionMySQL"%>
 <%
-	String id=request.getParameter("id");
+	String id=request.getParameter("idDel");
 	
 	ConexionMySQL con=new ConexionMySQL();
 	Statement st=con.consultasMySQL();
 
-	String url="../..view/clientes/listadoClientes.jsp?mensaje=";
+	String url="/estudiojuridico/view/clientes/listadoClientes.jsp?mensaje=";
 	try {
 		Integer deleteOk=st.executeUpdate("DELETE FROM clientes WHERE id="+id);
 		

@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 <title>Contacta con nosotros</title>
+
 <!-- bootstrap-->
 <link crossorigin="anonymous"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -40,8 +41,8 @@
 			</div>
 		</div>
 	</nav>
-	<main
-		class="container-fluid d-flex flex-sm-column flex-md-row justify-content-center">
+	
+	<main class="container-fluid d-flex flex-sm-column flex-md-row justify-content-center">
 		<!-- formulario login-->
 		<section class="row" id="login">
 			<article class="col">
@@ -88,7 +89,7 @@
 				</div>
 			</article>
 		</section>
-		<!-- formulario contacto-->
+		<!-- formulario login-->
 
 		<!--redes-->
 

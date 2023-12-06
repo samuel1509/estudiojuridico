@@ -26,12 +26,12 @@ if (updateModal) {
     const button = event.relatedTarget
     // Extract info from data-bs-* attributes
     const idUpd = button.getAttribute('idUpd')
-    const nombre = button.getAttribute('nombre')
-    const apellido = button.getAttribute('apellido')
-    const email = button.getAttribute('email')
-    const cuit = button.getAttribute('cuit')
-    const dni = button.getAttribute('dni')
-    const domicilio = button.getAttribute('domicilio')
+    const nombre = button.getAttribute('nomUpd')
+    const apellido = button.getAttribute('apeUpd')
+    const email = button.getAttribute('emailUpd')
+    const cuit = button.getAttribute('cuitUpd')
+    const dni = button.getAttribute('dniUpd')
+    const domicilio = button.getAttribute('domUpd')
     
     
     // If necessary, you could initiate an Ajax request here
@@ -40,12 +40,12 @@ if (updateModal) {
     // Update the modal's content.
     const modalTitle = updateModal.querySelector('.modal-title')
     document.getElementById("idUpd").value=idUpd
-    document.getElementById("nombre").value=nombre
-    document.getElementById("apellido").value=apellido
-    document.getElementById("email").value=email
-    document.getElementById("cuit").value=cuit
-    document.getElementById("dni").value=dni
-    document.getElementById("domicilio").value=domicilio
+    document.getElementById("nomUpd").value=nombre
+    document.getElementById("apeUpd").value=apellido
+    document.getElementById("emailUpd").value=email
+    document.getElementById("cuitUpd").value=cuit
+    document.getElementById("dniUpd").value=dni
+    document.getElementById("domUpd").value=domicilio
  
   })
 }

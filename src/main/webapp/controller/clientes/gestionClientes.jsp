@@ -29,6 +29,8 @@ try {
 	String url = "/estudiojuridico/view/clientes/listadoClientes.jsp";
 	ClienteDAO clienteDAO=new ClienteDAO();
 	List<Cliente>clientes=clienteDAO.listar();
+	
 	request.getSession().setAttribute("clientes", clientes);
+	
 	response.sendRedirect(url);
 %>
