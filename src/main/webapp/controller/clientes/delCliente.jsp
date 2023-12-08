@@ -1,27 +1,30 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="db.ConexionMySQL"%>
-<%
-	String id=request.getParameter("idDel");
-	
-	ConexionMySQL con=new ConexionMySQL();
-	Statement st=con.consultasMySQL();
+<%@page import="db.dao.ClienteDAO"%>
 
-	String url="/estudiojuridico/view/clientes/listadoClientes.jsp?mensaje=";
+
+<%
+	int id=Integer.valueOf(request.getParameter("idDel"));
+	
+	
+	//ConexionMySQL con=new ConexionMySQL();
+	//Statement st=con.consultasMySQL();
+	
+	ClienteDAO clienteDAO=new ClienteDAO();
+
+	String url="/estudiojuridico/controller/clientes/gestionClientes.jsp";
+	String mensaje="";
 	try {
-		Integer deleteOk=st.executeUpdate("DELETE FROM clientes WHERE id="+id);
-		
+			
+		//Integer deleteOk=st.executeUpdate("DELETE FROM clientes WHERE id="+id);
+		Integer deleteOk=clienteDAO.elimiar(id);
 		if(deleteOk==1) {
 			
-			response.sendRedirect(url+"Cliente%20eliminado%20exitosamente");			
+			mensaje="?mensaje=Cliente%20eliminado%20exitosamente";			
 		} else {
-			response.sendRedirect(url+"No%20se%20pudo%20eliminar%20el%20cliente");			
+			mensaje="?mensaje=No%20se%20pudo%20eliminar%20el%20cliente";			
 		}
 	} catch(Exception e) {
-		response.sendRedirect(url+"No%20se%20pudo%20eliminar%20el%20cliente");			
+			mensaje="?mensaje=No%20se%20pudo%20eliminar%20el%20cliente";			
 	}
 	
-	con.cerrarConexion();
-
-
+	response.sendRedirect(url+mensaje);
 %>

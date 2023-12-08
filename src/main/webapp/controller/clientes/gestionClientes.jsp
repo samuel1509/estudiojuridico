@@ -1,11 +1,6 @@
-
-
 <%@page import="db.dao.ClienteDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="db.ConexionMySQL"%>
 <%@page import="modelo.Cliente"%>
 
 <%
@@ -26,7 +21,13 @@ try {
 }
 */
 
+	String mensaje=request.getParameter("mensaje");
 	String url = "/estudiojuridico/view/clientes/listadoClientes.jsp";
+	//agrego el mensaje como parametro
+	if(mensaje!=null)
+	 	url = url+"?mensaje="+mensaje;
+	
+	
 	ClienteDAO clienteDAO=new ClienteDAO();
 	List<Cliente>clientes=clienteDAO.listar();
 	

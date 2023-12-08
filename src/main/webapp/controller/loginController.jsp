@@ -1,7 +1,5 @@
 
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="db.ConexionMySQL"%>
+
 <%@page import="db.dao.UsuarioDAO"%>
 <%@page import="modelo.Usuario"%>
 

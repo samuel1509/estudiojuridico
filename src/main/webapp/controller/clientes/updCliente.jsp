@@ -45,32 +45,31 @@
 <%-- %> --%>
 
 
+
+
+<!-- // String id=request.getParameter("idUpd"); -->
+<!-- // String nombre="'" + request.getParameter("nombre") + "'"; -->
+<!-- //   String apellido="'" + request.getParameter("apellido") + "'"; -->
+<!-- //   String email="'" + request.getParameter("email") + "'"; -->
+<!-- //   String cuit=request.getParameter("cuit"); -->
+<!-- //   String dni=request.getParameter("dni"); -->
+<!-- //   String domicilio="'" + request.getParameter("domicilio") + "'"; -->
+<!-- //   String info=request.getParameter("info"); -->
+
+<!-- // //cadena con la instruccion sql -->
+<!-- // 	String sql="UPDATE clientes SET "+ -->
+<!-- // 			"nombre="+nombre+ -->
+<!-- // 			", apellido="+apellido+ -->
+<!-- // 			", email="+email+ -->
+<!-- // 			", cuit="+cuit+ -->
+<!-- // 			", dni="+dni+ -->
+<!-- // 			", domicilio="+domicilio+ -->
+<!-- // 			" WHERE id="+id; -->
+	
 <%@page import="db.dao.*"%>
 <%@page import="modelo.*"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
+
 <%
-
-// String id=request.getParameter("idUpd");
-// String nombre="'" + request.getParameter("nombre") + "'";
-//   String apellido="'" + request.getParameter("apellido") + "'";
-//   String email="'" + request.getParameter("email") + "'";
-//   String cuit=request.getParameter("cuit");
-//   String dni=request.getParameter("dni");
-//   String domicilio="'" + request.getParameter("domicilio") + "'";
-//   String info=request.getParameter("info");
-
-// //cadena con la instruccion sql
-// 	String sql="UPDATE clientes SET "+
-// 			"nombre="+nombre+
-// 			", apellido="+apellido+
-// 			", email="+email+
-// 			", cuit="+cuit+
-// 			", dni="+dni+
-// 			", domicilio="+domicilio+
-// 			" WHERE id="+id;
-	
-
 
 
 //cargo datos en cliente
@@ -85,8 +84,6 @@ cliente = new Cliente(
 		request.getParameter("emailUpd"), 
 		request.getParameter("domUpd")
 		);
-
-
 
 
 //url para volver al listado luego de grabar el nuevo cliente
@@ -109,8 +106,7 @@ try {
 	e.printStackTrace();
 
 } finally {
+
 	response.sendRedirect(url + mensaje);
 }
 %>
-
-   

@@ -1,7 +1,6 @@
 <%@page import="db.dao.*"%>
 <%@page import="modelo.*"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
+
 <%
 /*
 String nombre=request.getParameter("nomAdd");

@@ -12,18 +12,25 @@ import java.util.List;
 import db.ConexionMySQL;
 import modelo.Cliente;
 
+/**
+ * Esta clase se encarga de conectarse a la db
+ * y hacer las operaciones CRUD de clientes
+ * 
+ */
 public class ClienteDAO {
 	private ConexionMySQL con;
 	private Statement st;
 	private String sql;
 	private ResultSet rs;
 
+	//constructor, inicia la conexion a db e
+	//inicia la variable par ejecutar sql en la db
 	public ClienteDAO() {
 		con = new ConexionMySQL();
 		st = con.consultasMySQL();
 	}
 
-	
+	//agrega un cliente a la db
 	public int agregar(Cliente c) {
 		Integer insertOk=0;
 		sql="INSERT INTO clientes (nombre, apellido, email, dni, cuit, domicilio) VALUES ('"+
@@ -39,10 +46,15 @@ public class ClienteDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql="";
+		finally {
+			con.cerrarConexion();
+			sql="";
+		}
 		return insertOk;
 	}
 
+	
+	//permite eliminar un cliente en la DB
 	public int elimiar(int id) {
 		
 		Integer deleteOk=0;
@@ -54,11 +66,14 @@ public class ClienteDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql="";
+		finally {
+			con.cerrarConexion();
+			sql="";
+		}
 		return deleteOk;
 		
 	}
-
+	//permite modificar un cliente en la db
 	public int modificar(Cliente c) {
 		Integer updateOk=0;
 		
@@ -70,8 +85,7 @@ public class ClienteDAO {
 		  ", dni="+c.getDni()+
  			", domicilio='"+c.getDomicilio()+"' "+ 			
  			" WHERE id="+c.getId();
-		
-				
+			
 		try {
 			updateOk=st.executeUpdate(sql);
 			
@@ -79,10 +93,15 @@ public class ClienteDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sql="";
+		finally {
+			con.cerrarConexion();
+			sql="";
+		}
+	
 		return updateOk;
 	}
 
+	
 	//listado de clientes
 	public List<Cliente> listar() {
 		sql="SELECT * FROM clientes;";
@@ -117,7 +136,8 @@ public class ClienteDAO {
 	}
 
 	
-	
+	//permite buscar un cliente por un parametro
+	//a desarrollar
 	public Cliente buscar() {
 		return null;
 	}
