@@ -97,12 +97,12 @@ try {
 	int updateOk = clienteDAO.modificar(cliente);
 
 	if (updateOk == 1)
-		mensaje = "?mensaje=Cliente%20agregado%20exitosamente";
+		mensaje = "?mensaje=Cliente%20actualizado%20exitosamente";
 	else
-		mensaje = "?mensaje=No%20se%20pudo%20agregar%20el%20cliente";
+		mensaje = "?mensaje=No%20se%20pudo%20actualizar%20el%20cliente";
 } catch (Exception e) {
 
-	mensaje = "?mensaje=No%20se%20pudo%20agregar%20el%20cliente";
+	mensaje = "?mensaje=No%20se%20pudo%20actualizar%20el%20cliente";
 	e.printStackTrace();
 
 } finally {
