@@ -22,14 +22,22 @@ try {
 */
 
 	String mensaje=request.getParameter("mensaje");
+	
 	String url = "/estudiojuridico/view/clientes/listadoClientes.jsp";
+	
+	
+	List<Cliente>clientes;
 	//agrego el mensaje como parametro
 	if(mensaje!=null)
 	 	url = url+"?mensaje="+mensaje;
 	
 	
 	ClienteDAO clienteDAO=new ClienteDAO();
-	List<Cliente>clientes=clienteDAO.listar();
+
+		clientes=clienteDAO.listar();
+
+		
+	
 	
 	request.getSession().setAttribute("clientes", clientes);
 	

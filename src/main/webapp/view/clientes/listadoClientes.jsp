@@ -50,16 +50,32 @@
 			}
 			%>
 
-			<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-				<a href='#' data-bs-toggle='modal' data-bs-target='#agregarModal' 
-				class="btn btn-outline-success">
-				Agregrar Clientes
-				</a>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-around opacity-75">
+				<div class="d-flex">
+					<a href='#' data-bs-toggle='modal' data-bs-target='#agregarModal'
+						class="btn btn-success"> Agregrar Clientes </a>
+				</div>
+				<!-- Formulario para buscar por apellido -->
+				<div class="d-flex">
+					<form class="d-flex" role="search" 
+						action="/estudiojuridico/controller/clientes/buscarCliente.jsp" method="GET">
+						<input type="hidden" id="filtro" name="filtro" value="filtro">
+						<input class="form-control me-2" type="search"
+							placeholder="buscar..." aria-label="Search" id="buscarApe"
+							name="buscarApe">
+
+						<button class="btn btn-success" type="submit">Buscar...</button>
+					</form>
+				</div>
+
 			</div>
+
+
 
 			<br>
 
 			<div class="table-responsive">
+
 				<table class="table text-center opacity-75">
 					<thead class="table-dark">
 						<tr>
@@ -77,15 +93,14 @@
 					<tbody>
 
 						<%
-						
 						HttpSession sesion = request.getSession(false); // Si pasas false como argumento, no creará una nueva sesión si no existe
-						
+
 						Usuario usr = (Usuario) sesion.getAttribute("usuario");
-						
+
 						//Verificar si la sesión es válida
 						if (usr != null && usr.getNombreRol().equals("admin")) {
-							
-							@SuppressWarnings("unchecked")					
+
+							@SuppressWarnings("unchecked")
 							List<Cliente> clientes = (List<Cliente>) request.getSession().getAttribute("clientes");
 
 							if (clientes != null)
@@ -93,7 +108,7 @@
 							out.println("<tr>");
 
 							out.println("<td>");
-								
+
 							out.println(cliente.getId());
 							out.println("</td>");
 
@@ -122,16 +137,11 @@
 							out.println("</td>");
 
 							out.println("<td>");
-							
-							out.println("<a href='#' data-bs-toggle='modal' data-bs-target='#updateModal " + 
-													"'idUpd='" + cliente.getId()+ 
-													"' nomUpd='" + cliente.getNombre() + 
-													"' apeUpd='" + cliente.getApellido() + 
-													"' emailUpd='" + cliente.getEmail() + 
-													"' dniUpd='" + cliente.getDni() + 
-													"' cuitUpd='" + cliente.getCuit() + 
-													"' domUpd='"  + cliente.getDomicilio() + 
-													"'><i class='bi bi-pencil'></i></a>");
+
+							out.println("<a href='#' data-bs-toggle='modal' data-bs-target='#updateModal " + "'idUpd='" + cliente.getId()
+									+ "' nomUpd='" + cliente.getNombre() + "' apeUpd='" + cliente.getApellido() + "' emailUpd='"
+									+ cliente.getEmail() + "' dniUpd='" + cliente.getDni() + "' cuitUpd='" + cliente.getCuit() + "' domUpd='"
+									+ cliente.getDomicilio() + "'><i class='bi bi-pencil'></i></a>");
 
 							out.println("<a href='#' data-bs-toggle='modal' data-bs-target='#deleteModal' idDel='" + cliente.getId()
 									+ "'><i class='bi bi-trash-fill'></i></a>");
@@ -143,46 +153,41 @@
 							}
 						} else {
 							String url = "/estudiojuridico/view/login.jsp";
-							
+
 							response.sendRedirect(url);
 						}
 						%>
 					</tbody>
 				</table>
 			</div>
-			
+
 			<!-- Formulario agregar clientes -->
 			<div class="modal fade" id="agregarModal" tabindex="-1"
 				aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h1 class="modal-title fs-5" id="exampleModalLabel">
-							Agregar cliente</h1>
+							<h1 class="modal-title fs-5" id="exampleModalLabel">Agregar
+								cliente</h1>
 							<button type="button" class="btn-close" data-bs-dismiss="modal"
 								aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-						
-							<form action="/estudiojuridico/controller/clientes/addCliente.jsp"
+
+							<form
+								action="/estudiojuridico/controller/clientes/addCliente.jsp"
 								method="post">
 								<div class="mb-3 text-center">
-									<input type="text" 
-										class="form-control mb-3" id="nomAdd" name="nomAdd" 
-										placeholder="Nombre"> 
-										<input type="text"
+									<input type="text" class="form-control mb-3" id="nomAdd"
+										name="nomAdd" placeholder="Nombre"> <input type="text"
 										class="form-control mb-3" id="apeAdd" name="apeAdd"
-										placeholder="Apellido"> 
-										<input type="text"
+										placeholder="Apellido"> <input type="text"
 										class="form-control mb-3" id="emailAdd" name="emailAdd"
-										placeholder="Email"> 
-										<input type="text"
+										placeholder="Email"> <input type="text"
 										class="form-control mb-3" id="dniAdd" name="dniAdd"
-										placeholder="DNI"> 
-										<input type="text"
+										placeholder="DNI"> <input type="text"
 										class="form-control mb-3" id="cuitAdd" name="cuitAdd"
-										placeholder="CUIT"> 
-										<input type="text"
+										placeholder="CUIT"> <input type="text"
 										class="form-control mb-3" id="domAdd" name="domAdd"
 										placeholder="Domicilio">
 								</div>
@@ -210,20 +215,19 @@
 						</div>
 						<div class="modal-body">
 
-							<form action="/estudiojuridico/controller/clientes/delCliente.jsp"
+							<form
+								action="/estudiojuridico/controller/clientes/delCliente.jsp"
 								method="post">
 
 								<div class="mb-3 text-center">
 									<label for="recipient-name" class="col-form-label">
-									¿Realmente desea eliminar el cliente?</label> 
-									<input type="text" class="form-control" readonly
-										id="recipient-name" name="idDel" >
+										¿Realmente desea eliminar el cliente?</label> <input type="text"
+										class="form-control" readonly id="recipient-name" name="idDel">
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-warning"
 										data-bs-dismiss="modal">Cancelar</button>
-									<button type="submit" class="btn btn-danger">
-										Eliminar</button>
+									<button type="submit" class="btn btn-danger">Eliminar</button>
 								</div>
 							</form>
 						</div>
@@ -244,18 +248,21 @@
 								aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							<form action="/estudiojuridico/controller/clientes/updCliente.jsp"
+							<form
+								action="/estudiojuridico/controller/clientes/updCliente.jsp"
 								method="post">
 								<div class="mb-3 text-center">
 									<input type="text" class="form-control" id="idUpd" name="idUpd"
 										readonly="readonly"> <input type="text"
 										class="form-control" id="nomUpd" name="nomUpd"> <input
 										type="text" class="form-control" id="apeUpd" name="apeUpd">
-									<input type="text" class="form-control" id="emailUpd" name="emailUpd">
-									<input type="text" class="form-control" id="dniUpd" name="dniUpd">
-									<input type="text" class="form-control" id="cuitUpd" name="cuitUpd">
-									<input type="text" class="form-control" id="domUpd" name="domUpd">
-									
+									<input type="text" class="form-control" id="emailUpd"
+										name="emailUpd"> <input type="text"
+										class="form-control" id="dniUpd" name="dniUpd"> <input
+										type="text" class="form-control" id="cuitUpd" name="cuitUpd">
+									<input type="text" class="form-control" id="domUpd"
+										name="domUpd">
+
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary"
@@ -276,6 +283,5 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 		crossorigin="anonymous"></script>
-
 </body>
 </html>
