@@ -34,9 +34,7 @@
 				</ul>
 
 
-
-
-				<a class="btn btn-outline-secondary text-danger"
+				<a class="btn btn-outline-danger "
 					href="/estudiojuridico/controller/logoutController.jsp"
 					role="button"> <i class="bi bi-door-closed-fill">Salir</i>
 				</a>

@@ -2,7 +2,7 @@ package modelo;
 
 //calse que representa un abogado
 public class Abogado {
-	private Integer id;
+	private Long id;
 	private String nombre;
 	private String apellido;
 	private String email;
@@ -10,7 +10,11 @@ public class Abogado {
 	private String resenia;
 	private Especialidad especialidad;
 	
-	public Abogado() {}
+	
+	
+	public Abogado() { 
+		especialidad=null;
+	}
 	
 	/**
 	 * @param id
@@ -21,7 +25,13 @@ public class Abogado {
 	 * @param resenia
 	 * @param especialidad
 	 */
-	public Abogado(Integer id, String nombre, String apellido, String email, String tel, String resenia,
+	public Abogado(
+			Long id, 
+			String nombre, 
+			String apellido, 
+			String email, 
+			String tel, 
+			String resenia,
 			Especialidad especialidad) {
 		this.id = id;
 		this.nombre = nombre;
@@ -32,17 +42,33 @@ public class Abogado {
 		this.especialidad = especialidad;
 	}
 
+	public Abogado( 
+			String nombre, 
+			String apellido, 
+			String email, 
+			String tel, 
+			String resenia,
+			Especialidad especialidad) {
+
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.email = email;
+		this.tel = tel;
+		this.resenia = resenia;
+		this.especialidad = especialidad;
+	}
+	
 	/**
 	 * @return the id
 	 */
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -129,5 +155,4 @@ public class Abogado {
 	public void setEspecialidad(Especialidad especialidad) {
 		this.especialidad = especialidad;
 	}
-	
 }

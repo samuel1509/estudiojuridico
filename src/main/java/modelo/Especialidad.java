@@ -1,25 +1,39 @@
 package modelo;
 
-//ESPECIALIDADES DE LOS ABOGADOS
-public enum Especialidad{
-	DERECHO_DE_FAMILIA("Derecho de Familia",1),
-	DERECHO_PENAL("Derecho Penal",2),
-	DERECHO_LABORAL("Derecho Laboral",3),
-	DERECHO_ADMINISTRATIVO("Derecho Administrativo",4);
-	
+
+/**
+ *Clase que guarda los datos de las especialidades de los abogados
+ */
+public class Especialidad{
+		
 	private String especialidad;
-	private int orden;
+	private Long id;
 	
-	private Especialidad (String especialidad, int orden){
+	public Especialidad() {};
+	
+	public Especialidad (Long id, String especialidad){
 		this.especialidad = especialidad;
-		this.orden = orden;
+		this.id = id;
+	}
+	
+	public Especialidad(Long id) {
+		this.id = id;
 	}
 
+	public void setEspecialidad(String especialidad) {
+		this.especialidad=especialidad;
+	}
+
+	public void setId(Long id) {
+		this.id=id;
+	}	
+	
 	public String getEspecialidad() {
 		return especialidad;
 	}
 
-	public int getOrden() {
-		return orden;
+	public Long getId() {
+		return id;
 	}	
+	
 }

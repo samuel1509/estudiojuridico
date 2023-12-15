@@ -15,6 +15,7 @@ import modelo.Cliente;
  * 
  */
 public class ClienteDAO {
+	
 	private ConexionMySQL con;
 	private Statement st;
 	private String sql;
@@ -43,6 +44,7 @@ public class ClienteDAO {
 			sql = "";
 		}
 		return insertOk;
+		
 	}
 
 	// permite eliminar un cliente en la DB
@@ -61,7 +63,6 @@ public class ClienteDAO {
 			sql = "";
 		}
 		return deleteOk;
-
 	}
 
 	// permite modificar un cliente en la db

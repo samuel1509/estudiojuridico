@@ -14,19 +14,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clientes</title>
 
-<!-- bootstrap-->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-	crossorigin="anonymous" />
+	<!--  links del header-->
+	<jsp:include page="../headerLinks.jsp"></jsp:include>
 
-<!-- iconos bootstrap-->
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
-
-<!--estilos propios-->
-<link rel="stylesheet" href="/estudiojuridico/css/style.css" />
 </head>
 
 <body>
@@ -50,10 +40,11 @@
 			}
 			%>
 
-			<div class="d-grid gap-2 d-md-flex justify-content-md-around opacity-75">
+			<div class="d-grid gap-2 d-md-flex justify-content-md-between opacity-">
 				<div class="d-flex">
 					<a href='#' data-bs-toggle='modal' data-bs-target='#agregarModal'
-						class="btn btn-success"> Agregrar Clientes </a>
+						class="btn btn-success"> Agregrar Cliente 
+					</a>
 				</div>
 				<!-- Formulario para buscar por apellido -->
 				<div class="d-flex">
@@ -61,7 +52,7 @@
 						action="/estudiojuridico/controller/clientes/buscarCliente.jsp" method="GET">
 						<input type="hidden" id="filtro" name="filtro" value="filtro">
 						<input class="form-control me-2" type="search"
-							placeholder="buscar..." aria-label="Search" id="buscarApe"
+							placeholder="buscar por apellido..." aria-label="Search" id="buscarApe"
 							name="buscarApe">
 
 						<button class="btn btn-success" type="submit">Buscar...</button>
@@ -86,7 +77,7 @@
 							<th scope="col">DNI</th>
 							<th scope="col">CUIT</th>
 							<th scope="col">Domicilio</th>
-							<th scope="col">Edición</th>
+							<th scope="col">Acciones</th>
 						</tr>
 					</thead>
 
