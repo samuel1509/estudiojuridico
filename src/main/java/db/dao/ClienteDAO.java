@@ -89,7 +89,7 @@ public class ClienteDAO {
 
 	// listado de clientes
 	public List<Cliente> listar() {
-		sql = "SELECT * FROM clientes;";
+		sql = "SELECT * FROM clientes ORDER BY id;";
 
 		List<Cliente> clientes = new ArrayList<Cliente>();
 
@@ -115,7 +115,7 @@ public class ClienteDAO {
 	// permite buscar un cliente por apellido
 	//
 	public List<Cliente> buscarByApellido(String apellido) {
-		sql = "SELECT * FROM clientes WHERE apellido LIKE '%" + apellido + "%';";
+		sql = "SELECT * FROM clientes WHERE apellido LIKE '%" + apellido + "%' ORDER BY id;";
 		List<Cliente> clientes = new ArrayList<Cliente>();
 		try {
 			rs = st.executeQuery(sql);

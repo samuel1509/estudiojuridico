@@ -32,7 +32,7 @@ if (updateModal) {
     const email = button.getAttribute('emailUpd')
     const tel = button.getAttribute('telUpd')
     const resenia = button.getAttribute('reseniaUpd')
-    const espId = button.getAttribute('espIdUpd')//para seleccionar en el combo
+    const espId = parseInt(button.getAttribute('idEspUpd'))//para seleccionar en el combo
     
     
     // If necessary, you could initiate an Ajax request here
@@ -47,7 +47,9 @@ if (updateModal) {
     document.getElementById("emailUpd").value=email
     document.getElementById("telUpd").value=tel
     document.getElementById("reseniaUpd").value=resenia
-    document.getElementById("espIdUpd").value=espId //para seleccionar en el combo
+    
+    document.getElementById("selectEspIdUpd").options.item(espId).selected = 'selected';
+    //document.getElementById("espIdUpd").value=espId //para seleccionar en el combo
  
   })
 }
